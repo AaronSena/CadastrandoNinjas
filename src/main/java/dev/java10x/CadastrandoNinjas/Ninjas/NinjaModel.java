@@ -12,15 +12,19 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NinjaModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Identificador")
     private Long id;
 
+    @Column(name = "Nome")
     private String nome;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "Email")
     private String email;
 
+    @Column(name = "Idade")
     private int idade;
 
     //Varios ninjas só poderão ter apenas uma missão
