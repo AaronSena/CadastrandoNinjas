@@ -1,15 +1,32 @@
 package dev.java10x.CadastrandoNinjas.Missoes;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/missoes")
 public class MissoesController {
 
-    @GetMapping("/boasvindas")
-    public String apresentacao(){
-        return "olá";
+    //Mostrar as Missões
+    @GetMapping("/listar")
+    public String listarMissao(){
+        return "Mostrando todas as missões";
+    }
+
+    //Adicionar novas missões
+    @PostMapping("/criar")
+    public String criarMissao(){
+        return "Criando uma nova missão...";
+    }
+
+    //Alterar missao
+    @PutMapping("/alterar")
+    public String alterarMissaoPorID(){
+        return "Alterando missão do ID escolhido";
+    }
+
+    //Deletar Missão
+    @PutMapping("/deletar")
+    public String deletarMissaoPorID(){
+        return "Deletando a missão do ID escolhido";
     }
 }
